@@ -4,6 +4,7 @@ import io from "socket.io-client";
 
 import './Chat.css';
 import InfoBar from '../InfoBar/InfoBar';
+import Input from '../Input/Input';
 
 
 
@@ -16,14 +17,14 @@ const Chat = ({ location }) => {
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
-// const ENDPOINT = 'localhost:8000';
+  const ENDPOINT = 'localhost:8000';
 
   useEffect(() => {
     const {name, room} = queryString.parse(location.search);
    
     console.log(location.search)
    
-    socket = io("http://localhost:8000")
+    socket = io(ENDPOINT)
   
  
    
@@ -38,7 +39,7 @@ const Chat = ({ location }) => {
     }
 
       
-  },["http://localhost:8000",location.search]);
+  },[ENDPOINT,location.search]);
 
   useEffect(() => {
     //socket = io("http://localhost:8000")
@@ -67,12 +68,7 @@ const Chat = ({ location }) => {
   <div className="outerContainer">
     <div className="container">
     <InfoBar room={room} />
-      {/* <input type="text"
-      value={message}
-      onChange={(event)=>setMessage(event.target.value)}
-      onKeyPress={e=>e.key==='Enter' ? sendMessage(e) :null}
-      
-      /> */}
+ <Input message={message} setMessage={setMessage} sendMessage={sendMessage}/>
     </div>
     
   </div>
