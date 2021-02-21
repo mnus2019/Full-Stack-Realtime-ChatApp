@@ -1,5 +1,8 @@
 import React from 'react';
 
+
+import "./App.css";
+
 import Chat from './components/chat/Chat';
 import Join from './components/join/Join';
 
