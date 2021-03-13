@@ -10,7 +10,6 @@ import Input from '../Input/Input';
 
 
 
-
 let socket;
 
 const Chat = ({ location }) => {
@@ -26,9 +25,7 @@ const Chat = ({ location }) => {
    
     console.log(location.search)
    
-    socket = io(ENDPOINT)
-  
- 
+    socket = io(ENDPOINT) 
    
     setName(name);
     setRoom(room);
