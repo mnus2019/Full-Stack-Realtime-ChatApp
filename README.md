@@ -4,7 +4,7 @@
 ![Chat Application](./full-stack-Realchat/nodejs/img/chatscreen.png)
 
 ## Introduction
-This is a code repository for the corresponding video tutorial. 
+This is a code repository for the corresponding Full-Stack realtime chat App. 
 
 In this project I create a full Realtime Chat Application.used  React on the front end, with NodeJS + Socket.io web socket library on the back end. 
 
